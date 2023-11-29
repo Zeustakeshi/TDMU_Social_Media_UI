@@ -1,0 +1,132 @@
+.reaction-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reaction-active-label {
+    font-weight: 600;
+}
+
+.reaction-active-label--Like {
+    color: #2563eb !important;
+}
+
+.reaction-active-label--Haha {
+    color: #facc15 !important;
+}
+
+.reaction-active-label--Love {
+    color: #e11d48 !important;
+}
+
+.reaction-active-label--Sad {
+    color: #eab308 !important;
+}
+
+.reaction-active-label--Wow {
+    color: #fbbf24 !important;
+}
+
+.reaction-active-label--Angry {
+    color: #f59e0b !important;
+}
+
+.reaction-box {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    justify-content: center;
+    transition: all 5s linear;
+    align-items: center;
+    border-radius: 20px;
+    animation: show-reactions 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reaction-box--right {
+    left: 100%;
+}
+.reaction-box--left {
+    right: 100%;
+}
+.reaction-box--top {
+    bottom: 100%;
+}
+.reaction-box--bottom {
+    top: 100%;
+}
+.reaction-box--top-left {
+    bottom: 100%;
+    left: 0;
+}
+.reaction-box--top-right {
+    bottom: 100%;
+    right: 0;
+}
+
+.reaction-box--sm {
+    padding: 8px;
+    gap: 8px;
+}
+
+.reaction-box--md {
+    padding: 10px;
+    gap: 10px;
+}
+
+.reaction-box--lg {
+    padding: 12px;
+    gap: 12px;
+}
+
+.reaction-box--sm .reaction-item {
+    width: 20px;
+    height: 20px;
+}
+.reaction-box--md .reaction-item {
+    width: 40px;
+    height: 40px;
+}
+
+.reaction-box--lg .reaction-item {
+    width: 50px;
+    height: 50px;
+}
+
+.reaction-wrapper:hover .reaction-box {
+    display: flex;
+}
+
+@keyframes show-reactions {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.reaction-box .reaction-item:hover {
+    animation: reaction-item-hover 0.5s cubic-bezier(0.175, 0.885, 0.5, 1.5)
+        forwards;
+}
+
+@keyframes reaction-item-hover {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        transform: scale(1.2) translateY(-25%);
+    }
+}
+
+@keyframes show-reactions {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

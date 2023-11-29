@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @apply text-sm sm:text-base;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.app-body-sticky {
+    position: sticky;
+    height: calc(100vh - 90px);
+    top: 90px;
+}
+
+.app-body-sticky-body-padding {
+    position: sticky;
+    top: 110px;
+    height: calc(100vh - 140px);
+}
+
+.app-body-height {
+    min-height: calc(100vh - 90px);
+}
+
+.friend-suggestion-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 320px));
+    justify-content: center;
+}
+
+.post-action-item {
+    @apply flex justify-center items-center gap-2 text-slate-600 font-semibold cursor-pointer px-3 py-2;
+}
+
+.abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    @apply shadow-lg bg-slate-200;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-primary shadow-primary;
+}
