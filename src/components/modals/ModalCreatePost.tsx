@@ -13,13 +13,11 @@ import { BiHappy, BiImage } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
 import { ButtonNormal } from "../buttons";
 import Card from "../cards/Cards";
 import ImageUpload from "../imageUpload/ImageUpload";
 import PreviewImage from "../imageUpload/PreviewImage";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { toast } from "react-toastify";
 
 type Props = {
     setShowModal: Dispatch<SetStateAction<boolean>>;
@@ -38,13 +36,7 @@ const ModelCreatePost: React.FC<Props> = ({ setShowModal, ...props }) => {
         null
     );
 
-    const {
-        register,
-        handleSubmit,
-        control,
-        watch,
-        formState: { errors },
-    } = useForm<FormValues>();
+    const { register, handleSubmit, control } = useForm<FormValues>();
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         if (
             postImageFile instanceof Blob &&

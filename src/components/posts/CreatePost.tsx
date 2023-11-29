@@ -2,8 +2,6 @@ import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import { BiHappy, BiImage } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
 import Card from "../cards/Cards";
 import ModelCreatePost from "../modals/ModalCreatePost";
 import ModalNoAuth from "../modals/ModalNoAuth";
@@ -11,7 +9,6 @@ import ModalNoAuth from "../modals/ModalNoAuth";
 const CreatePost = () => {
     const [showModalCreate, setShowModalCreate] = useState<boolean>(false);
     const [showModalNoAuth, setShowModalNoAuth] = useState<boolean>(false);
-    const { info: user } = useSelector((state: RootState) => state.user);
 
     const handleCreatePost = () => {
         // if (!user?.id) setShowModalNoAuth(true);

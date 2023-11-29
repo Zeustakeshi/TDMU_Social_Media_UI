@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 type TabnavagatorProviderProps = {
     children: React.ReactNode;
@@ -32,4 +32,4 @@ const useTabnavagator = () => {
     return context;
 };
 
-export { useTabnavagator, TabnavagatorProvider };
+export { TabnavagatorProvider, useTabnavagator };

@@ -1,56 +1,51 @@
-import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { createBrowserRouter } from "react-router-dom";
 import AuthLayout from "../layouts/AuthLayout";
 import ChatsLayout from "../layouts/ChatsLayout";
+import LayoutWrapper from "../layouts/LayoutWrapper.tsx";
 import MainLayout from "../layouts/MainLayout";
+import ProfileLayout from "../layouts/ProfileLayout.tsx";
 import Chats from "../pages/Chats";
 import Discover from "../pages/Discover";
 import Friends from "../pages/Friends";
 import Home from "../pages/Home";
 import News from "../pages/News";
-import NoLogin from "../pages/NoLogin.tsx";
 import Login from "../pages/auth/Login";
-import NewUser from "../pages/auth/newUser/NewUser.tsx";
 import Register from "../pages/auth/Register";
 import SendVerifyEmail from "../pages/auth/SendVerifyEmail.tsx";
 import VerifyEmail from "../pages/auth/VerifyEmail.tsx";
-import { setInfo } from "../redux/fetures/user.slice.ts";
+import NewUser from "../pages/auth/newUser/NewUser.tsx";
 import Profile from "../pages/profile/Profile.tsx";
-import LayoutWrapper from "../layouts/LayoutWrapper.tsx";
-import ProfileLayout from "../layouts/ProfileLayout.tsx";
 import ProfileAbout from "../pages/profile/ProfileAbout.tsx";
 import ProfileFriends from "../pages/profile/ProfileFriends.tsx";
 import ProfilePhoto from "../pages/profile/ProfilePhoto.tsx";
 
-type PrivateRouteProps = {
-    children: React.ReactNode;
-};
+// type PrivateRouteProps = {
+//     children: React.ReactNode;
+// };
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
-    const [allow, setAllow] = useState<boolean>(false);
+// const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
+//     const [allow, setAllow] = useState<boolean>(false);
 
-    const dispatch = useDispatch();
+//     const dispatch = useDispatch();
 
-    useEffect(() => {
-        (async () => {
-            const token = Cookies.get("refresh_token");
-            if (!token) return;
-            const userStorage = localStorage.getItem("user");
+//     useEffect(() => {
+//         (async () => {
+//             const token = Cookies.get("refresh_token");
+//             if (!token) return;
+//             const userStorage = localStorage.getItem("user");
 
-            if (userStorage) {
-                dispatch(setInfo(JSON.parse(userStorage)));
-                setAllow(true);
-            } else {
-                // get user info here
-            }
-        })();
-    }, []);
+//             if (userStorage) {
+//                 dispatch(setInfo(JSON.parse(userStorage)));
+//                 setAllow(true);
+//             } else {
+//                 // get user info here
+//             }
+//         })();
+//     }, []);
 
-    if (!allow) return <NoLogin></NoLogin>;
-    return children;
-};
+//     if (!allow) return <NoLogin></NoLogin>;
+//     return children;
+// };
 
 const router = createBrowserRouter([
     {

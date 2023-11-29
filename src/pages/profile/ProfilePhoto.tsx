@@ -1,8 +1,6 @@
-import React from "react";
-
 type Props = {};
 
-const ProfilePhoto = (props: Props) => {
+const ProfilePhoto = ({}: Props) => {
     return <div>ProfilePhoto</div>;
 };
 

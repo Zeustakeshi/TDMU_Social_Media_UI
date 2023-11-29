@@ -1,15 +1,14 @@
 import Cookies from "js-cookie";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
 import { CallState } from "../common/enums/call.enum";
 import CallingHeader from "../components/header/CallingHeader";
 import Header from "../components/header/Header";
 import SidebarLeft from "../components/sidebar/SidebarLeft";
 import SidebarRight from "../components/sidebar/SidebarRight";
+import api from "../configs/api";
 import { setInfo } from "../redux/fetures/user.slice";
 import { RootState } from "../redux/store";
-import api from "../configs/api";
 
 type Props = {
     sidebarLeft?: boolean;

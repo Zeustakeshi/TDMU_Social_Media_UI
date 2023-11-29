@@ -1,9 +1,8 @@
-import React from "react";
 import PostList from "../posts/postList/PostList";
 
 type Props = {};
 
-const ProfileTimeline = (props: Props) => {
+const ProfileTimeline = ({}: Props) => {
     return (
         <div>
             {" "}

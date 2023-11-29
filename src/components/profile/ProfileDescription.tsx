@@ -1,8 +1,6 @@
-import React from "react";
-
 type Props = {};
 
-const ProfileDescription = (props: Props) => {
+const ProfileDescription = ({}: Props) => {
     return (
         <p className="text-sm text-slate-700">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,

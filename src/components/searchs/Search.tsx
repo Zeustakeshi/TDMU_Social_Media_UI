@@ -21,6 +21,7 @@ const Search: React.FC<Props> = () => {
     });
 
     const handleSearch = async (searchValue: string) => {
+        console.log({ searchResults, searchValue });
         await new Promise((reslove) => {
             setTimeout(() => {
                 reslove([{ id: 1 }]);

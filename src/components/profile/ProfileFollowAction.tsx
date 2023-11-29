@@ -1,9 +1,8 @@
-import React from "react";
-import { ButtonNormal, ButtonOutline, ButtonPrimary } from "../buttons";
+import { ButtonOutline, ButtonPrimary } from "../buttons";
 
 type Props = {};
 
-const ProfileFollowAction = (props: Props) => {
+const ProfileFollowAction = ({}: Props) => {
     return (
         <div className="flex justify-end items-center gap-5">
             <ButtonPrimary>Theo dõi</ButtonPrimary>

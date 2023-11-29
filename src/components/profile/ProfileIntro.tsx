@@ -1,9 +1,8 @@
-import React from "react";
 import Card from "../cards/Cards";
 
 type Props = {};
 
-const ProfileIntro = (props: Props) => {
+const ProfileIntro = ({}: Props) => {
     return (
         <Card className="min-w-[400px] max-w-[400px] min-h-[1000px] app-body-sticky-body-padding ">
             <h3 className="text-2xl text-slate-500 font-semibold mb-6">

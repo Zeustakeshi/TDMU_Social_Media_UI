@@ -1,11 +1,10 @@
-import React from "react";
-import ProfileNavItem from "./ProfileNavItem";
 import { useParams } from "react-router-dom";
 import Card from "../cards/Cards";
+import ProfileNavItem from "./ProfileNavItem";
 
 type Props = {};
 
-const ProfileNav = (props: Props) => {
+const ProfileNav = ({}: Props) => {
     const { id } = useParams();
     return (
         <Card

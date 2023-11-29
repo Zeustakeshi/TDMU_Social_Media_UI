@@ -1,8 +1,6 @@
-import React from "react";
-
 type Props = {};
 
-const ProfileBackground = (props: Props) => {
+const ProfileBackground = ({}: Props) => {
     return (
         <div className="w-full h-[500px] max-h-[500px] bg-slate-300 rounded-xl">
             <img

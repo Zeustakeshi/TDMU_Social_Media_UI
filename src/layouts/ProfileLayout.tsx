@@ -1,17 +1,16 @@
-import React from "react";
-import MainLayout from "./MainLayout";
-import ProfileBackground from "../components/profile/ProfileBackground";
-import ProfileAvatar from "../components/profile/ProfileAvatar";
-import ProfileDescription from "../components/profile/ProfileDescription";
-import ProfileUsername from "../components/profile/ProfileUsername";
-import ProfileFollowAction from "../components/profile/ProfileFollowAction";
-import ProfileNav from "../components/profile/ProfileNav";
 import { Outlet } from "react-router-dom";
 import Card from "../components/cards/Cards";
+import ProfileAvatar from "../components/profile/ProfileAvatar";
+import ProfileBackground from "../components/profile/ProfileBackground";
+import ProfileDescription from "../components/profile/ProfileDescription";
+import ProfileFollowAction from "../components/profile/ProfileFollowAction";
+import ProfileNav from "../components/profile/ProfileNav";
+import ProfileUsername from "../components/profile/ProfileUsername";
+import MainLayout from "./MainLayout";
 
 type Props = {};
 
-const ProfileLayout = (props: Props) => {
+const ProfileLayout = ({}: Props) => {
     return (
         <MainLayout sidebarLeft>
             <div>
