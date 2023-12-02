@@ -1,4 +1,3 @@
-import { Avatar } from "@mui/material";
 import React, { useEffect } from "react";
 import { BiHomeAlt2, BiNews } from "react-icons/bi";
 import { BsChatText } from "react-icons/bs";
@@ -13,6 +12,7 @@ import { NavbarItemType } from "../../common/types/navbar.type";
 import { ButtonControlNavbar } from "../buttons";
 import Logo from "../logo/Logo";
 import NavbarItem from "./NavbarItem";
+import Avatar from "../avatar/Avatar";
 
 const navbarItems: NavbarItemType[] = [
     {
@@ -82,9 +82,8 @@ const Navbar: React.FC<Props> = ({ showAvatar = false }) => {
                 <ul className="w-min h-full flex flex-col justify-start items-start  gap-1 py-5">
                     {showAvatar && (
                         <Avatar
-                            alt="Remy Sharp"
                             src="/avatar.png"
-                            sx={{ width: 56, height: 56 }}
+                            size={56}
                             className="cursor-pointer"
                         />
                     )}

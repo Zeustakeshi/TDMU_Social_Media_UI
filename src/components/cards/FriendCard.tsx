@@ -3,8 +3,9 @@ import { SocialMediaType } from "../../common/types/global.type";
 
 import { NavLink } from "react-router-dom";
 import Card from "./Cards";
-import { Avatar } from "@mui/material";
+
 import { getSocialMediaIcon } from "../../utils/socialmedia.util";
+import Avatar from "../avatar/Avatar";
 
 type Props = {
     socialMedias: { type: SocialMediaType; to: string }[];
@@ -17,7 +18,7 @@ const FriendCard: React.FC<Props> = ({ socialMedias, header }) => {
             <div className="flex justify-start items-center gap-5">
                 <Avatar
                     className="border"
-                    sx={{ width: 100, height: 100 }}
+                    size={100}
                     src="/avatar.png"
                 ></Avatar>
                 <div className="flex flex-col justify-start items-start mb-2">

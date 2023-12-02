@@ -1,14 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 type Props = {
     label: string;
-    to: string;
-};
+} & NavLinkProps;
 
 const ProfileNavItem = (props: Props) => {
     return (
         <NavLink
-            to={props.to}
             className={({ isActive }) => {
                 const activeClassName =
                     "text-primary border-b-[2px] border-primary";
@@ -18,6 +16,7 @@ const ProfileNavItem = (props: Props) => {
                     isActive ? activeClassName : className
                 }`;
             }}
+            {...props}
         >
             {props.label}
         </NavLink>

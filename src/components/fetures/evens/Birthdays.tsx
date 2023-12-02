@@ -2,7 +2,7 @@ import React from "react";
 import { IoSend } from "react-icons/io5";
 import Card from "../../cards/Cards";
 import { NavLink } from "react-router-dom";
-import { Avatar } from "@mui/material";
+import Avatar from "../../avatar/Avatar";
 
 type Props = {};
 
@@ -20,10 +20,7 @@ const Birthdays: React.FC<Props> = () => {
             }
         >
             <div className="flex justify-start items-center gap-5">
-                <Avatar
-                    sx={{ width: 50, height: 50 }}
-                    src="/avatar.png"
-                ></Avatar>
+                <Avatar size={50} src="/avatar.png"></Avatar>
                 <div className="flex flex-col justify-start items-start">
                     <p>Minh Hieu</p>
                     <p className=" text-xs text-slate-500">

@@ -10,7 +10,7 @@ interface UserState {
 // Define the initial state using that type
 const initialState: UserState = {
     info: {
-        id: "",
+        id: "1",
         avatar: "",
         email: "",
         gender: "female",

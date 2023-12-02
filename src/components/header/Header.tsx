@@ -7,17 +7,21 @@ import Logo from "../logo/Logo";
 import Search from "../searchs/Search";
 import HeaderAccountActions from "./HeaderAccountActions";
 
-type Props = {};
+type Props = {
+    showControlNavbar?: boolean;
+};
 
-const Header: React.FC<Props> = ({}) => {
+const Header: React.FC<Props> = ({ showControlNavbar }) => {
     const { info: user } = useSelector((state: RootState) => state.user);
 
     return (
         <header
-            className={`px-5 py-2 sticky top-0 bg-white bg-opacity-90 backdrop-blur z-40 flex justify-between items-center`}
+            className={`px-10 py-2 sticky top-0 bg-white bg-opacity-90 backdrop-blur z-40 flex justify-between items-center`}
         >
             <div className="flex justify-start items-center gap-5">
-                <ButtonControlNavbar></ButtonControlNavbar>
+                {showControlNavbar && (
+                    <ButtonControlNavbar></ButtonControlNavbar>
+                )}
                 <div className="hidden sm:inline-block">
                     <Logo></Logo>
                 </div>

@@ -4,6 +4,8 @@ import { CommentItemType } from "../../../common/types/comment.type";
 import Avatar from "../../avatar/Avatar";
 import CommentItemAction from "./CommentItemAction";
 import moment from "moment";
+import CommentListSkeleton from "./CommentListSkeleton";
+import UserInfoCard from "../../cards/UserInfoCard";
 
 type Props = {} & CommentItemType;
 
@@ -21,8 +23,16 @@ const CommentItem: React.FC<Props> = (props) => {
                         id: crypto.randomUUID(),
                         comment: "world fake",
                         owner: {
-                            userId: "1",
-                            avatar: "https://images.unsplash.com/photo-1621508638997-e30808c10653?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            id: crypto.randomUUID(),
+                            shortDescription:
+                                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ducimus",
+                            email: `spiderman@gmail.com`,
+                            social: {
+                                facebook: `https://facebook.com`,
+                                instagram: `https://instagram.com`,
+                                twitter: `https://twitter.com`,
+                            },
+                            avatar: `https://source.unsplash.com/featured/?spiderman`,
                             username: "spiderman",
                         },
                         childrenCount: Math.floor(Math.random() * 2),
@@ -52,9 +62,11 @@ const CommentItem: React.FC<Props> = (props) => {
     return (
         <div className="my-2">
             <div className="flex justify-start items-start gap-4 max-w-max  ">
-                <div className="w-[30px] h-[30px] mt-2">
-                    <Avatar size={30} src={props.owner.avatar}></Avatar>
-                </div>
+                <UserInfoCard user={props.owner}>
+                    <div className="w-[30px] h-[30px] mt-2">
+                        <Avatar size={30} src={props.owner.avatar}></Avatar>
+                    </div>
+                </UserInfoCard>
                 <div className="w-full max-w-max">
                     <div className="bg-slate-100 px-5 py-3 rounded-lg ">
                         <div className="flex w-full justify-between items-center">
@@ -85,9 +97,9 @@ const CommentItem: React.FC<Props> = (props) => {
                     </div>
 
                     {loading ? (
-                        <div className="text-slate-400 text-sm">
-                            đang tải ....
-                        </div>
+                        <CommentListSkeleton
+                            commentCount={props.childrenCount}
+                        ></CommentListSkeleton>
                     ) : (
                         <CommentList comments={childrens}></CommentList>
                     )}

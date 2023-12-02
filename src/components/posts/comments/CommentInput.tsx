@@ -1,4 +1,3 @@
-import { Avatar } from "@mui/material";
 import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import React, { ChangeEvent, useState } from "react";
 import {
@@ -11,6 +10,7 @@ import { useComment } from "../../../contexts/Comment.context";
 import Menu from "../../menu/Menu";
 import MenuContentWrapper from "../../menu/MenuContentWrapper";
 import { IoMdClose } from "react-icons/io";
+import Avatar from "../../avatar/Avatar";
 
 type Props = {};
 
@@ -45,10 +45,7 @@ const CommentInput: React.FC<Props> = () => {
                 </div>
             )}
             <div className="py-3 flex justify-between items-start gap-4">
-                <Avatar
-                    sx={{ width: 45, height: 45 }}
-                    src="/avatar.png"
-                ></Avatar>
+                <Avatar size={45} src="/avatar.png"></Avatar>
                 <div className="flex-1 w-full flex justify-between items-center border rounded-lg border-slate-200 focus-within:border-primary ">
                     <div className="w-full">
                         <textarea

@@ -1,15 +1,19 @@
-import { Avatar } from "@mui/material";
+import moment from "moment";
 import React, { useState } from "react";
+import { PostType } from "../../../common/types/post.type";
+import { getPostPrivacy } from "../../../utils/post.util";
+import Avatar from "../../avatar/Avatar";
 import { ButtonReactionPost } from "../../buttons";
 import Card from "../../cards/Cards";
 import { Comment } from "../comments";
 import ActionCommentPost from "./actions/ActionCommentPost";
 import ActionSettingPost from "./actions/ActionSettingPost";
 import ActionSharePost from "./actions/ActionSharePost";
+import UserInfoCard from "../../cards/UserInfoCard";
 
-type Props = {};
+type Props = {} & PostType;
 
-const PostItem: React.FC<Props> = () => {
+const PostItem: React.FC<Props> = (props) => {
     const [showComment, setShowComment] = useState<boolean>(false);
     return (
         <Card
@@ -17,18 +21,22 @@ const PostItem: React.FC<Props> = () => {
             headerLine={false}
             header={
                 <div className="w-full flex justify-between items-start">
-                    <div className="flex justify-start items-center gap-5">
-                        <Avatar
-                            sx={{ width: 50, height: 50 }}
-                            src="avatar.png"
-                        ></Avatar>
+                    <UserInfoCard
+                        user={props.owner}
+                        className="flex justify-start items-center gap-5"
+                    >
+                        <Avatar size={50} src={props.owner.avatar}></Avatar>
                         <div className="flex flex-col justify-start items-start">
-                            <p className="font-medium">Minh Hieu</p>
+                            <p className="font-medium">
+                                {props.owner.username}
+                            </p>
                             <p className="text-xs font-medium text-slate-600">
-                                <span>15p</span>, <span>Công khai</span>
+                                <span>{moment(props.createdAt).toNow()}</span>,
+                                <span>{getPostPrivacy(props.privacy)}</span>
                             </p>
                         </div>
-                    </div>
+                    </UserInfoCard>
+
                     <ActionSettingPost></ActionSettingPost>
                 </div>
             }
@@ -36,7 +44,7 @@ const PostItem: React.FC<Props> = () => {
             <div className="w-full h-full flex justify-center items-center">
                 <div className="relative w-[700px] h-[500px] rounded-lg overflow-hidden">
                     <img
-                        src="https://firebasestorage.googleapis.com/v0/b/tdmu-social-media.appspot.com/o/public-assets%2Fpost_example.jpg?alt=media"
+                        src={props.imageUrl}
                         alt="post-img"
                         className="absolute w-full h-full object-cover rounded-[inherit]"
                     />
@@ -53,16 +61,16 @@ const PostItem: React.FC<Props> = () => {
                         />
                     </div>
                     <span className="text-sm text-slate-500 font-medium">
-                        20
+                        {props.actions.likeCount}
                     </span>
                 </div>
                 <div className="flex justify-end items-center gap-5 text-sm text-slate-600 font-semibold my-4">
                     <p>
-                        <span>3 </span>
+                        <span>{props.actions.commentCount} </span>
                         <span>Bình luận</span>
                     </p>
                     <p>
-                        <span>12 </span>
+                        <span>{props.actions.shareCount} </span>
                         <span>Chia sẻ</span>
                     </p>
                 </div>
@@ -70,15 +78,17 @@ const PostItem: React.FC<Props> = () => {
 
             <div className="border-t border-b border-slate-200 p-3 flex justify-between items-center">
                 <ButtonReactionPost
-                    postId=""
-                    initialReaction={null}
+                    postId={props.id}
+                    initialReaction={props.actions.reaction}
                 ></ButtonReactionPost>
                 <ActionCommentPost
                     setShowComment={setShowComment}
                 ></ActionCommentPost>
                 <ActionSharePost></ActionSharePost>
             </div>
-            {showComment && <Comment></Comment>}
+            {showComment && (
+                <Comment commentCount={props.actions.commentCount}></Comment>
+            )}
         </Card>
     );
 };

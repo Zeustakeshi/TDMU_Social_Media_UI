@@ -1,5 +1,7 @@
-import React from "react";
 import { Avatar as AvatarMUI } from "@mui/material";
+import React from "react";
+import { twMerge } from "tailwind-merge";
+
 type Props = {
     src?: string;
     className?: string;
@@ -14,9 +16,12 @@ const Avatar: React.FC<Props> = ({
     ...props
 }) => {
     return (
-        <div className={`relative border rounded-full ${className}`}>
+        <div
+            className={twMerge("group relative border rounded-full", className)}
+        >
             <AvatarMUI
                 src="/avatar.png"
+                className=" border-primary border-[3px]"
                 sx={{ width: size, height: size }}
                 {...props}
             />

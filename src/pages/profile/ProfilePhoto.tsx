@@ -1,7 +1,7 @@
 type Props = {};
 
 const ProfilePhoto = ({}: Props) => {
-    return <div>ProfilePhoto</div>;
+    return <div>Không tìm thấy thông tin ảnh</div>;
 };
 
 export default ProfilePhoto;

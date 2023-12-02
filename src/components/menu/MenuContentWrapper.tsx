@@ -21,7 +21,7 @@ const MenuContentWrapper: React.FC<IMenuContentWrapperProps> = ({
     if (!show) return <></>;
     return (
         // <Portal>
-        <div ref={clickRef} className={`absolute z-40 ${className}`}>
+        <div ref={clickRef} className={`absolute left-0 z-40 ${className}`}>
             {children}
         </div>
         // </Portal>

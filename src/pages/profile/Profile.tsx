@@ -1,5 +1,5 @@
-import ProfileIntro from "../../components/profile/ProfileIntro";
 import ProfileTimeline from "../../components/profile/ProfileTimeline";
+import ProfileIntro from "../../components/profile/profileIntro/ProfileIntro";
 
 type Props = {};
 

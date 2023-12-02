@@ -53,7 +53,7 @@ const MainLayout: React.FC<Props> = ({
 
     return (
         <div className="bg-white">
-            <Header></Header>
+            <Header showControlNavbar={sidebarLeft}></Header>
             {callState === CallState.ON_CALLING && (
                 <CallingHeader className=" top-[72px]"></CallingHeader>
             )}

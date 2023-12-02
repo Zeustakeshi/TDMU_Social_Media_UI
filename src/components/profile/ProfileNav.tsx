@@ -17,7 +17,7 @@ const ProfileNav = ({}: Props) => {
             ></ProfileNavItem>
             <ProfileNavItem
                 label="Giới thiệu"
-                to={`/profile/${id}/about`}
+                to={`/profile/${id}/about/overview`}
             ></ProfileNavItem>
             <ProfileNavItem
                 label="Bạn bè"

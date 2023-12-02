@@ -8,7 +8,6 @@ type Props = {
 
 const CommentList: React.FC<Props> = ({ comments }) => {
     // listen parent change
-
     return (
         <>
             <div className="p-2 w-full">

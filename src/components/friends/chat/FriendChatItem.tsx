@@ -1,4 +1,5 @@
-import { Avatar } from "@mui/material";
+import Avatar from "./components/avatar/Avatar";
+
 import moment from "moment";
 import React from "react";
 

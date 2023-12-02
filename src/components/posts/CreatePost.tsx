@@ -1,10 +1,10 @@
-import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import { BiHappy, BiImage } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
 import Card from "../cards/Cards";
 import ModelCreatePost from "../modals/ModalCreatePost";
 import ModalNoAuth from "../modals/ModalNoAuth";
+import Avatar from "../avatar/Avatar";
 
 const CreatePost = () => {
     const [showModalCreate, setShowModalCreate] = useState<boolean>(false);
@@ -19,10 +19,7 @@ const CreatePost = () => {
         <>
             <Card onClick={handleCreatePost}>
                 <div className="flex justify-start items-center gap-4">
-                    <Avatar
-                        sx={{ width: 50, height: 50 }}
-                        src="/avatar.png"
-                    ></Avatar>
+                    <Avatar size={50} src="/avatar.png"></Avatar>
                     <div className="text-slate-600 px-5 py-2 flex-1 bg-slate-100 rounded-md outline-primary border border-transparent ">
                         Bạn đang nghĩ gì?
                     </div>

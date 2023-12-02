@@ -4,7 +4,7 @@ type Props = {};
 
 const ProfileTimeline = ({}: Props) => {
     return (
-        <div>
+        <div className="">
             {" "}
             <PostList></PostList>
         </div>
