@@ -94,7 +94,7 @@ const PostItemSkeleton = () => {
                 ></ActionCommentPost>
                 <ActionSharePost></ActionSharePost>
             </div>
-            {showComment && <Comment></Comment>}
+            {showComment && <Comment commentCount={2}></Comment>}
         </Card>
     );
 };
